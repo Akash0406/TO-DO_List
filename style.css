@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+/* Adding Gradient to Body */
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: white;
+}
+
+.aside {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 9;
+}
+
+/* clock */
+.clock {
+    height: 60px;
+    font-size: 2rem;
+    line-height: 60px;  
+    color: #eee;
+    text-align: center;
+    box-shadow: 4px 0 20px #222;
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgb(72, 35, 151) 37%, rgba(0,212,255,1) 100%);
+  }
+
+/*                  main Frame             */
+.mainFrame {
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgb(72, 35, 151) 37%, rgba(0,212,255,1) 100%);
+    padding: 20px;
+    width: 640px;
+    height: auto;
+    margin: 10px auto;
+    color: rgba(77, 75, 75, 0.5);
+    border-radius: 20px;
+}
+
+.mainFrame::before {
+        content: '';
+        width: 640x;
+        background: inherit; 
+        position: absolute;
+        left: -25px; 
+        right: 0;
+        top: -25px;   
+        bottom: 0;
+        box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+        filter: blur(200px);
+
+}
+/*                  main Frame Ends            */
+
+
+/*                  todos                   */
+#todos {
+    color: white;
+    padding: 30px;
+    width: 600px;
+    height: auto;
+}
+
+
+/*         main Heading       */
+.heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.heading > h1 {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.heading h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 10%;
+    height: 2px;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+}
+
+.heading h1:hover:before{
+    width: 80%;
+    height: 3px;
+    border-radius: 30px; 
+}
+
+/*            main Heading Ends            */
+
+
+/*         To Do Input Section Container            */
+.todo-input-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+
+/*         To Do Input Section             */
+.todo-input-container > .todo-input {
+    padding-left: 80px;
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 10px;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.todo-input-container > .todo-input:focus {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+/*        Add Task icon (Non functional)          */
+.Task {
+    position: absolute;
+    top: 5px;
+    left: -35px;
+    z-index: 8;
+    font-size: 1.8rem;
+    color: rgb(118, 168, 95);
+}
+
+
+/*       Add and Delete Common Class      */
+.addDel-icon{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: auto;
+}
+
+.addDel-icon:nth-child(3) {
+    right:40px;
+}
+
+.addTask {
+    color: rgb(9, 177, 9);
+    transform: scale(1);
+}
+
+.addTask:active {
+    transform: scale(0.9);
+    background-color: rgb(9, 177, 9);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.deleteAll {
+    color: rgb(185, 49, 49);
+    transform: scale(1);
+}
+
+.deleteAll:active {
+    transform: scale(0.9);
+    background-color: rgb(185, 49, 49);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.todo-list-container {
+    list-style: none;
+    margin: 10px 0 0;
+}
+
+.todo-list-container .todo-list {
+    position: relative;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    /* extra */
+    width: 100%;
+    background-color: white;
+    color: black;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: 0.5s ease-in-out;
+    
+}
+
+.button button {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    padding: auto;
+    margin: 3px;
+    border-radius: 50%;
+    border: none;
+}
+
+.button button i {
+    pointer-events: none;
+}
+
+.complete i{
+    color: rgb(131, 224, 37);
+    transform: scale(1.6);
+}
+
+.complete:active i{
+    transform: scale(1.2);
+}
+
+
+
+
+.edit i{
+    color: rgb(32, 29, 219);
+    transform: scale(1.4);
+}
+
+.edit:active i{
+    transform: scale(1.2);
+}
+
+
+.delete i{
+    color: rgb(233, 26, 26);
+    transform: scale(1.3);
+}
+
+.delete:active i{
+    transform: scale(1.2);
+}
+
+.task-delete{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 00.5s;
+    visibility: none;
+}
+
+.countDetails {
+    margin-top: 20px;
+    z-index: 99;
+}
+
+
+
+.line-cut {
+    text-decoration: line-through;
+    opacity: 0.7;
+    transition: 0.5s ease-in-out;
+    transform: scale(0.9);
+}
+
+/* responsive Design  */
+@media screen and (max-width: 650px) {
+
+    body {
+        background-color: black;
+    }
+    #todos {
+
+        width: 100%;
+
+    }
+
+    /* .clock, aside {
+        width: 100%;
+        background-color: red;
+    } */
+    
+}
+
