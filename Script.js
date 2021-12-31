@@ -5,7 +5,7 @@ var addBtn = document.querySelector('.addTask');
 var delAllBtn = document.querySelector('.deleteAll');
 
 
-addBtn.addEventListener('click', function (e) {
+addBtn.addEventListener('click', function(e) {
     // alert("helo");
     // create all the element
     if (input.value.trim()) {
@@ -36,7 +36,7 @@ addBtn.addEventListener('click', function (e) {
         var editBtn = document.createElement('button');
         editBtn.classList.add('edit');
         editBtn.innerHTML = '<i class="fas fa-edit"></i>';
-        editBtn.onclick = function () {
+        editBtn.onclick = function() {
             editTaskDescription(liTag);
         }
 
@@ -59,10 +59,10 @@ addBtn.addEventListener('click', function (e) {
         // console.log(ulTag);
 
         var flag = true
-        // Complete, Edite, Delete Task Complete working Button
+            // Complete, Edite, Delete Task Complete working Button
 
         // Complete button
-        todoList.addEventListener('click', function (e) {
+        todoList.addEventListener('click', function(e) {
             // console.log(e.target);
             var BtnItems = e.target;
             // console.log(BtnItems.classList[0]);
@@ -88,6 +88,7 @@ addBtn.addEventListener('click', function (e) {
                 var temp = BtnItems.parentElement;
                 var temp2 = temp.parentElement;
                 toggle(flag);
+
                 function toggle(fl) {
                     if (fl) {
                         temp2.classList.add('line-cut');
@@ -106,7 +107,7 @@ addBtn.addEventListener('click', function (e) {
                 var temp3 = temp2.parentElement;
                 temp2.classList.remove('line-cut');
                 temp3.classList.add('task-delete');
-                temp3.addEventListener('transitionend', function () {
+                temp3.addEventListener('transitionend', function() {
                     temp3.remove();
                 })
             }
@@ -116,8 +117,7 @@ addBtn.addEventListener('click', function (e) {
         // when add button is clicked clear the input are
         input.value = '';
 
-    }
-    else if (input.value === '') {
+    } else if (input.value === '') {
         alert('Please fill the input field');
     }
 })
@@ -125,8 +125,16 @@ addBtn.addEventListener('click', function (e) {
 
 function editTaskDescription(e) {
     // console.log(e);
+    var tempv = e.firstChild.nodeValue;
     var editDescription = prompt('edit the selected Task Description', e.firstChild.nodeValue);
+    // var tempv = editDescription;
     e.firstChild.nodeValue = editDescription;
+
+    if (e.firstChild.nodeValue == '') {
+        // alert("Empty filling");
+        e.firstChild.nodeValue = tempv;
+        // console.log(tempv);
+    }
 
 }
 
@@ -142,11 +150,13 @@ function deleteAllTask() {
 }
 
 
+// document.addEventListener('keydown', keyPressed);
 
-
-
-
-
+// function keyPressed(e) {
+//     if (e.code == "Enter") {
+//         addBtn();
+//     }
+// }
 
 
 
@@ -165,6 +175,6 @@ function startTime() {
 }
 
 function checkTime(i) {
-    if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+    if (i < 10) { i = "0" + i }; // add zero in front of numbers < 10
     return i;
 }
