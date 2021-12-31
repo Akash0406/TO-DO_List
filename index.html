@@ -7,41 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ToDo List</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <link rel="icon" type="image/png" href="images/to-do-icon.svg" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="startTime()">
-
+    <!-- Time And Date on Top -->
     <div id="txt" class="aside clock">
 
     </div>
-
+    <!-- main Frame of To Do List App -->
     <div class="mainFrame">
         <div id="todos">
+            <!-- Heading -->
             <div class="heading">
                 <h1> Add ToDo List</h1>
             </div>
+            <!-- To Do Task input Container -->
             <div class="todo-input-container">
                 <i class="fas fa-tasks Task"></i>
+                <!-- Task Input -->
                 <input type="text" class="todo-input" placeholder=" Add Task">
                 <i class="fas fa-plus-circle addTask addDel-icon"></i>
                 <i class="fas fa-trash-alt deleteAll addDel-icon" onclick="deleteAllTask()"></i>
+
             </div>
 
 
+            <!-- New Task -->
         </div>
 
 
-        <div class="countDetails">
 
-            <hr>
+        <hr>
+        <div id="count-container"> <span id="taskCount">Count : <span id="count">0</span></span>
         </div>
-
-
     </div>
 
     <script src="Script.js"></script>

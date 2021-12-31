@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
 
+
 /* Adding Gradient to Body */
-body{
+
+body {
     padding: 0;
     margin: 0;
     height: 100vh;
@@ -26,21 +27,25 @@ body{
     z-index: 9;
 }
 
+
 /* clock */
+
 .clock {
     height: 60px;
     font-size: 2rem;
-    line-height: 60px;  
+    line-height: 60px;
     color: #eee;
     text-align: center;
     box-shadow: 4px 0 20px #222;
-    background: rgb(2,0,36);
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgb(72, 35, 151) 37%, rgba(0,212,255,1) 100%);
-  }
+    background: rgb(2, 0, 36);
+    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 0%, rgb(72, 35, 151) 37%, rgba(0, 212, 255, 1) 100%);
+}
+
 
 /*                  main Frame             */
+
 .mainFrame {
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgb(72, 35, 151) 37%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 15%, rgb(72, 35, 151) 47%, rgba(0, 212, 255, 1) 100%);
     padding: 20px;
     width: 640px;
     height: auto;
@@ -50,22 +55,24 @@ body{
 }
 
 .mainFrame::before {
-        content: '';
-        width: 640x;
-        background: inherit; 
-        position: absolute;
-        left: -25px; 
-        right: 0;
-        top: -25px;   
-        bottom: 0;
-        box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
-        filter: blur(200px);
-
+    content: '';
+    width: 640x;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+    filter: blur(200px);
 }
+
+
 /*                  main Frame Ends            */
 
 
 /*                  todos                   */
+
 #todos {
     color: white;
     padding: 30px;
@@ -75,12 +82,13 @@ body{
 
 
 /*         main Heading       */
+
 .heading {
     margin-bottom: 30px;
     text-align: center;
 }
 
-.heading > h1 {
+.heading>h1 {
     display: inline-block;
     position: relative;
     text-transform: uppercase;
@@ -100,16 +108,18 @@ body{
     transition: 0.5s ease-in-out;
 }
 
-.heading h1:hover:before{
+.heading h1:hover:before {
     width: 80%;
     height: 3px;
-    border-radius: 30px; 
+    border-radius: 30px;
 }
+
 
 /*            main Heading Ends            */
 
 
 /*         To Do Input Section Container            */
+
 .todo-input-container {
     width: 100%;
     text-align: center;
@@ -120,7 +130,8 @@ body{
 
 
 /*         To Do Input Section             */
-.todo-input-container > .todo-input {
+
+.todo-input-container>.todo-input {
     padding-left: 80px;
     width: 100%;
     height: 40px;
@@ -129,15 +140,15 @@ body{
     outline: none;
     border: none;
     border-radius: 10px;
-    
 }
 
-.todo-input-container > .todo-input:focus {
+.todo-input-container>.todo-input:focus {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 
 /*        Add Task icon (Non functional)          */
+
 .Task {
     position: absolute;
     top: 5px;
@@ -149,7 +160,8 @@ body{
 
 
 /*       Add and Delete Common Class      */
-.addDel-icon{
+
+.addDel-icon {
     position: absolute;
     right: 0;
     width: 40px;
@@ -161,7 +173,7 @@ body{
 }
 
 .addDel-icon:nth-child(3) {
-    right:40px;
+    right: 40px;
 }
 
 .addTask {
@@ -188,7 +200,6 @@ body{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-
 .todo-list-container {
     list-style: none;
     margin: 10px 0 0;
@@ -203,7 +214,6 @@ body{
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-
     /* extra */
     width: 100%;
     background-color: white;
@@ -214,7 +224,6 @@ body{
     border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     transition: 0.5s ease-in-out;
-    
 }
 
 .button button {
@@ -234,50 +243,39 @@ body{
     pointer-events: none;
 }
 
-.complete i{
+.complete i {
     color: rgb(131, 224, 37);
     transform: scale(1.6);
 }
 
-.complete:active i{
+.complete:active i {
     transform: scale(1.2);
 }
 
-
-
-
-.edit i{
+.edit i {
     color: rgb(32, 29, 219);
     transform: scale(1.4);
 }
 
-.edit:active i{
+.edit:active i {
     transform: scale(1.2);
 }
 
-
-.delete i{
+.delete i {
     color: rgb(233, 26, 26);
     transform: scale(1.3);
 }
 
-.delete:active i{
+.delete:active i {
     transform: scale(1.2);
 }
 
-.task-delete{
+.task-delete {
     opacity: 0;
     transform: translateY(30px);
     transition: 00.5s;
     visibility: none;
 }
-
-.countDetails {
-    margin-top: 20px;
-    z-index: 99;
-}
-
-
 
 .line-cut {
     text-decoration: line-through;
@@ -286,22 +284,29 @@ body{
     transform: scale(0.9);
 }
 
-/* responsive Design  */
-@media screen and (max-width: 650px) {
 
+/* responsive Design  */
+
+@media screen and (max-width: 650px) {
     body {
         background-color: black;
     }
     #todos {
-
         width: 100%;
-
     }
-
     /* .clock, aside {
         width: 100%;
         background-color: red;
     } */
-    
 }
 
+
+/* Count */
+
+#taskCount {
+    z-index: 999999;
+    color: white;
+    /* opacity: 1;   */
+}
+
+#count-container {}

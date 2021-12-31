@@ -3,7 +3,9 @@ var mainContainer = document.querySelector('#todos');
 var input = document.querySelector('.todo-input');
 var addBtn = document.querySelector('.addTask');
 var delAllBtn = document.querySelector('.deleteAll');
+var count = document.querySelector('#count');
 
+var itemCount = 0;
 
 addBtn.addEventListener('click', function(e) {
     // alert("helo");
@@ -65,24 +67,6 @@ addBtn.addEventListener('click', function(e) {
         todoList.addEventListener('click', function(e) {
             // console.log(e.target);
             var BtnItems = e.target;
-            // console.log(BtnItems.classList[0]);
-            // var temp = BtnItems.parentElement;
-            // var temp2 = temp.parentElement;
-            // console.log(temp2.classList);
-            // if (BtnItems.classList[0] === 'complete') {
-            //     temp2.classList.add('line-cut');
-            // }
-
-
-
-            // 
-
-            // if (flag) {
-            //     if (temp2.classList[1] === 'line-cut') {
-            //         temp2.classList.remove('line-cut');
-            //     }
-            // }
-
 
             if (BtnItems.classList[0] === 'complete') {
                 var temp = BtnItems.parentElement;
@@ -93,9 +77,11 @@ addBtn.addEventListener('click', function(e) {
                     if (fl) {
                         temp2.classList.add('line-cut');
                         flag = false
+                        countItemsM();
                     } else {
                         temp2.classList.remove('line-cut');
                         flag = true;
+                        countItemsP();
                     }
 
                 }
@@ -110,12 +96,15 @@ addBtn.addEventListener('click', function(e) {
                 temp3.addEventListener('transitionend', function() {
                     temp3.remove();
                 })
+                if (flag)
+                    countItemsM();
             }
             // console.log(BtnItems.classList);
         })
 
         // when add button is clicked clear the input are
         input.value = '';
+        countItemsP();
 
     } else if (input.value === '') {
         alert('Please fill the input field');
@@ -141,12 +130,13 @@ function editTaskDescription(e) {
 // delAllBtn.addEventListener('click', deleteAllTask())
 
 function deleteAllTask() {
-    console.log('in');
+    // console.log('in');
     var getAllTask = document.querySelectorAll('.todo-list-container')
     console.log(getAllTask);
     for (var i = 0; i < getAllTask.length; i++) {
         getAllTask[i].remove();
     }
+    countItemsZ();
 }
 
 
@@ -158,6 +148,26 @@ function deleteAllTask() {
 //     }
 // }
 
+
+
+function countItemsP() {
+    itemCount++;
+    count.innerHTML = itemCount;
+    return;
+}
+
+function countItemsM() {
+    itemCount--;
+    count.innerHTML = itemCount;
+    return;
+}
+
+
+function countItemsZ() {
+    itemCount = 0;
+    count.innerHTML = itemCount;
+    return;
+}
 
 
 
