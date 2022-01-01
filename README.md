@@ -8,11 +8,11 @@ This online To-D0 App is completely based on HTML, CSS and JavaScript.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Contains 4 File. 
-  . Index.html
-  . style.css
-  . script.js
-  . Images(Folder)
+This Project Contains 4 File. 
+    Index.html
+    style.css
+    script.js
+    Images(Folder)
   
   All The Operation or Function(Add, Delete, Edit, etc) are in script.js file.
   
