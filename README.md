@@ -9,7 +9,7 @@ This online To-D0 App is completely based on HTML, CSS and JavaScript.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This Project Contains 4 File. 
-    Index.html
+   * Index.html
     style.css
     script.js
     Images(Folder)
